@@ -6,18 +6,24 @@ console.log('Whack-a-Mole!')
 
 let cells = document.getElementsByTagName('td')
 
+//variables for different random numbers
+let randomIndex = Math.floor(Math.random() * cells.length)
+let randomCell = cells[randomIndex]
+
 let mole = document.createElement('img')
+
 mole.src = './mole.PNG'
 mole.id = 'mole'
 
-//variables for different random numbers
-let min = 0
-let max = 24
-let number = randomNumber()
-let random = cells[number]
+randomCell.appendChild(mole)
 
 let audio = new Audio('./whack-audio.wav')
-
-function whackedMole() {}
+audio.play()
 
 mole.onclick = whackedMole
+
+function whackedMole() {
+  randomIndex = Math.floor(Math.random() * cells.length)
+  randomCell = cells[randomIndex]
+  randomCell.appendChild(mole)
+}
