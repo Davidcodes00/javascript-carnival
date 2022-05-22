@@ -17,3 +17,7 @@ let number = randomNumber()
 let random = cells[number]
 
 let audio = new Audio('./whack-audio.wav')
+
+function whackedMole() {}
+
+mole.onclick = whackedMole
